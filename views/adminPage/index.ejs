@@ -1,0 +1,46 @@
+<%- include('../partials/adminPagePartials/header') %>
+
+  <body>
+    <%- include('../partials/adminPagePartials/navbar') %>
+    <div class="container-max-500 center-auto">
+      <form action="create-blog" method="post">
+        <div>
+          <label for="titleInput">Title</label>
+          <br />
+          <input type="text" name="title" id="titleInput" required />
+        </div>
+        <div>
+          <label for="contentInput">Content</label>
+          <br />
+          <textarea
+            name="content"
+            id="contentInput"
+            cols="50"
+            rows="20"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label for="authorInput">Author</label>
+          <br />
+          <input type="text" name="author" id="authorInput" readonly value="<%=user.fullName%>" required />
+        </div>
+        <div>
+          <label for="categoryInput">Category</label>
+          <br />
+          <br>
+          <select name="category" id="categoryInput" required>
+            <% for (category of categories) { %>
+            <option value="<%=category._id%>"><%=category.categoryName%></option>
+            <%}%>
+          </select>
+        </div>
+        <br />
+        <div>
+          <button class="btn btn-success" style="width: 215px;">Create Blog</button>
+        </div>
+      </form>
+    </div>
+    <%- include('../partials/adminPagePartials/footer') %>
+  </body>
+</html>

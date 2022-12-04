@@ -1,0 +1,41 @@
+<%- include('../partials/adminPagePartials/header') %>
+
+<body>
+<%- include('../partials/adminPagePartials/navbar') %>
+
+<div class="container center-auto">
+
+
+    <table class="table table-striped ">
+        <thead>
+        <tr>
+            <th scope="col">Category Name</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (category of categories) { %>
+        <tr>
+            <th scope="row"><%=category.categoryName %></th>
+            <td><button id="deleteBTN" onclick="deleteCategory('<%=category._id%>')" class="btn btn-danger">DELETE</button></td>
+        </tr>
+        <% } %>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<%- include('../partials/adminPagePartials/footer') %>
+<script>
+    function deleteCategory(id) {
+        fetch(`http://localhost:3000/admin/delete-category/${id}`, {
+            method: "DELETE"
+        }).then(_=> {
+            location.reload()
+        })
+    }
+</script>
+</body>
+</html>

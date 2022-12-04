@@ -1,0 +1,15 @@
+<nav>
+  <div class="navbar navbar-between">
+    <div class="nav-brand"><a href="/blog">Blog App</a></div>
+    <ul>
+      <li><a href="/blog">Anasayfa</a></li>
+      <li><a href="/blog">Hakkımızda</a></li>
+      <li><a href="/blog">İletişim</a></li>
+    </ul>
+    <ul>
+      <li>
+        <a <%=auth ? '': 'style=display:none' %> href="/admin/blogs"> Admin Panel</a>
+      </li>
+    </ul>
+  </div>
+</nav>

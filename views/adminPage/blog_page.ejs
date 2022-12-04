@@ -1,0 +1,46 @@
+<%- include('../partials/adminPagePartials/header') %>
+
+<body>
+    <%- include('../partials/adminPagePartials/navbar') %>
+    
+    <div class="container center-auto">
+
+
+          <table class="table table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">Blog Title</th>
+                <th scope="col">Blog Category</th>
+                <th scope="col">Blog Author</th>
+                <th scope="col">Update - Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for (blog of blogs) { %>
+              <tr>
+                <th scope="row"><%=blog.title %></th>
+                <td><%=blog.category.categoryName %></td>
+                <td><%=blog.author %></td>
+                <td><a href="/admin/update-blog/<%=blog._id%>" class="btn btn-primary">UPDATE</a> <button id="deleteBTN" onclick="deleteBlog('<%=blog._id%>')" class="btn btn-danger">DELETE</button></td>
+              </tr>
+                <% } %>
+              
+            </tbody>
+          </table>
+
+    </div>
+
+
+    <%- include('../partials/adminPagePartials/footer') %>
+    <script>
+
+        function deleteBlog(id) {
+            fetch(`http://localhost:3000/admin/delete-blog/${id}`, {
+                method: "DELETE"
+            }).then(_ => {
+                location.reload()
+            })
+        }
+    </script>
+</body>
+</html>

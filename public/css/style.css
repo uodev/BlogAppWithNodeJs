@@ -1,0 +1,427 @@
+/* https://necolas.github.io/normalize.css/latest/normalize.css */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"); */
+/* danger colour: #E0144C #ff0099 */
+/* success colour: #a8e890 */
+/* warning colour: #ffd384 #FEE996 */
+/* default colour: #b2b2b2 */
+/* primary colour: #c1efff */
+/* dark colour: #333533 */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+/* general */
+
+:root {
+  /* main colour */
+  --default-colour: #b2b2b2;
+  --danger-colour: #e0144c;
+  --error-colour: #ff0099;
+  --success-colour: #a8e890;
+  --warning-colour: #ffd384;
+  --warning-two-colour: #fee996;
+  --primary-colour: #c1efff;
+  --dark-colour: #333533;
+
+  /* hover colour */
+  --default-hover-colour: #979696;
+  --danger-hover-colour: #b80d3a;
+  --success-hover-colour: #8ec978;
+  --warning-hover-colour: #e7bd70;
+  --primary-hover-colour: #9ecddd;
+  --dark-hover-colour: #262726;
+
+  /* navbar */
+  --navbar-dark-colour: #012535;
+
+  /* footer */
+  --footer-dark-colour: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fafafa;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Quicksand", sans-serif;
+  color: #444;
+}
+
+/* container */
+
+.container {
+  margin: 20px;
+}
+
+.container-max-500 {
+  margin: 20px;
+  max-width: 500px;
+}
+
+.container-max-700 {
+  margin: 20px;
+  max-width: 700px;
+}
+
+.post-title {
+  line-height: 1;
+}
+
+.post-title h1 {
+  font-size: 2.6em;
+}
+
+.post-author {
+  color: gray;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.post-content {
+  font-size: 1.2em;
+}
+
+.post-content p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.post-content img {
+  width: 700px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.center-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 10px;
+
+  border-radius: 10px;
+  background-color: rgba(239, 243, 240, 0.3);
+}
+
+.card-title {
+  font-size: 32px;
+
+  margin: 8px 8px 8px 0px;
+}
+
+.card-content img {
+  width: 500px;
+}
+
+.card-content p {
+  font-size: 18px;
+  color: var(--dark-colour);
+}
+
+.card-footer {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.card-footer button {
+  width: 120px;
+  background-color: transparent;
+  color: gray;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-footer button:hover {
+  background-color: transparent;
+  color: var(--error-colour);
+}
+
+/* display */
+
+.dp-b {
+  display: block;
+}
+
+.dp-i {
+  display: inline;
+}
+
+.dp-ib {
+  display: inline-block;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--footer-dark-colour);
+  color: white;
+  height: 100px;
+  text-align: center;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div p {
+  font-size: 20px;
+}
+
+/* font weight */
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-light {
+  font-weight: lighter;
+}
+
+/* buttons */
+
+button {
+  cursor: pointer;
+  width: 90px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+  border: 0;
+  border-radius: 5px;
+  background-color: var(--default-colour);
+}
+
+button:hover {
+  background-color: var(--default-hover-colour);
+}
+
+.btn-danger {
+  background-color: var(--danger-colour);
+}
+.btn-danger:hover {
+  background-color: var(--danger-hover-colour);
+}
+
+.btn-success {
+  background-color: var(--success-colour);
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover-colour);
+}
+
+.btn-warning {
+  background-color: var(--warning-colour);
+}
+
+.btn-warning:hover {
+  background-color: var(--warning-hover-colour);
+}
+
+.btn-primary {
+  background-color: var(--primary-colour);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover-colour);
+}
+
+.btn-dark {
+  background-color: var(--dark-colour);
+}
+
+.btn-dark:hover {
+  background-color: var(--dark-hover-colour);
+}
+
+/* alert */
+
+.alert {
+  background-color: var(--default-colour);
+  color: white;
+  padding: 20px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.alert-warning {
+  background-color: var(--warning-colour);
+  color: var(--error-colour);
+}
+
+.alert-success {
+  background-color: var(--success-colour);
+}
+
+.alert-danger {
+  background-color: var(--danger-colour);
+}
+.alert-dark {
+  background-color: var(--dark-colour);
+}
+
+/* input */
+
+input {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+
+  border-color: var(--default-colour);
+}
+
+input::placeholder {
+  color: var(--dark-colour);
+}
+
+input:focus {
+  outline-color: var(--default-colour);
+}
+
+.input-warning:focus {
+  outline-color: var(--warning-colour);
+}
+
+.input-success:focus {
+  outline-color: var(--success-colour);
+}
+
+.input-danger:focus {
+  outline-color: var(--danger-colour);
+}
+
+.input-primary:focus {
+  outline-color: var(--primary-colour);
+}
+
+.input-dark:focus {
+  outline-color: var(--dark-colour);
+}
+
+/* a */
+
+a {
+  text-decoration: none;
+
+  font-size: 18px;
+  color: var(--default-colour);
+}
+
+a:hover {
+  color: var(--default-hover-colour);
+}
+
+.a-success {
+  color: var(--success-colour);
+}
+
+.a-success:hover {
+  color: var(--success-hover-colour);
+}
+
+.a-danger {
+  color: var(--danger-colour) !important;
+}
+
+.a-danger:hover {
+  color: var(--danger-hover-colour) !important;
+}
+
+.a-warning {
+  color: var(--warning-colour);
+}
+
+.a-warning:hover {
+  color: var(--warning-hover-colour);
+}
+
+.a-primary {
+  color: var(--primary-colour);
+}
+
+.a-primary:hover {
+  color: var(--primary-hover-colour);
+}
+
+.a-dark {
+  color: var(--dark-colour);
+}
+
+.a-dark:hover {
+  color: var(--dark-hover-colour);
+}
+
+/* navber */
+
+.navbar {
+  height: 70px;
+  align-items: center;
+  display: flex;
+  max-width: auto;
+}
+
+.nav-dark {
+  background-color: var(--navbar-dark-colour);
+  color: white;
+}
+
+.navbar-between {
+  justify-content: space-between;
+}
+
+.navbar-between li {
+  margin-left: 15px;
+  margin-right: 30px;
+}
+
+.nav-brand a {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: var(--footer-dark-colour);
+}
+
+.navbar li,
+.navbar li a {
+  cursor: pointer;
+  display: inline;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  color: var(--footer-dark-colour);
+}
+
+.navbar li:hover,
+.navbar a:hover {
+  color: var(--error-colour);
+}
+
+.navbar-btn {
+  margin-left: auto;
+  margin-right: 30px;
+  justify-content: end;
+}
+
+p {
+  color: var(--default-colour);
+}

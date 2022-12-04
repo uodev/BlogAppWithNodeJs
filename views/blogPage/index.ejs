@@ -1,0 +1,22 @@
+<%- include('../partials/blogPagePartials/header') %>
+  <body>
+<%- include('../partials/blogPagePartials/navbar') %>
+
+    <div class="container-max-500 center-flex">
+      <% for (blog of allBlogs) { %>
+      <div class="card">
+        <div class="card-title"><%= blog.title %></div>
+        <div class="card-content">
+          <img src="/images/image.jpg" alt="blogimg" />
+          <p><%= blog.content.substring(0,150)%>...</p>
+        </div>
+        <div class="card-footer">
+          <p><%= blog.category.categoryName %></p>
+          <a href="blog/<%= blog._id%>">Devamını Oku</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <%- include('../partials/blogPagePartials/footer') %>
+  </body>
+</html>

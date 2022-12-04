@@ -1,0 +1,20 @@
+<%- include('../partials/adminPagePartials/header') %>
+
+<body>
+<%- include('../partials/adminPagePartials/navbar') %>
+<div class="container-max-500 center-auto">
+    <form action="/admin/create-category" method="post">
+        <div>
+            <label for="categoryInput">Category</label>
+            <br />
+            <input type="text" name="categoryName" id="categoryInput" required />
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-success" style="width: 215px;">Create Category</button>
+        </div>
+    </form>
+</div>
+<%- include('../partials/adminPagePartials/footer') %>
+</body>
+</html>
