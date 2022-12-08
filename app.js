@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 import { homePageRouter } from "./routers/homepage_router.js";
 import { adminPageRouter } from "./routers/adminpage_router.js";
-import {requiredAuth} from "./middlewares/check_user.js";
+import { requiredAuth } from "./middlewares/check_user.js";
 
 const app = express();
 
@@ -25,13 +25,16 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(methodOverride("_method"));
-
 
 //! Routers
 app.use("/blog", homePageRouter);
-app.use("/admin",requiredAuth, adminPageRouter);
+app.use("/admin", requiredAuth, adminPageRouter);
+
+app.use((req, res) => {
+  res.redirect("/blog");
+});
 
 app.listen(process.env.PORT, () => {
   console.log("Sunucu çalışıyor!");
